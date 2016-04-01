@@ -21,7 +21,10 @@
   <div id="cesiumContainer"></div>
   <script>
 
+<<<<<<< HEAD
  // There is a warning about using this method for cartodb basemaps, but suggested alternative is buggy.
+=======
+>>>>>>> refs/remotes/origin/master
 var basemapProvider = new Cesium.CartoDBImageryProvider({
     url: 'http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
     credit: 'Basemap courtesy of CartoDB'
@@ -35,6 +38,10 @@ var basemapProvider = new Cesium.CartoDBImageryProvider({
 	homeButton : false,
 	imageryProvider : basemapProvider,
 	sceneModePicker : false,
+<<<<<<< HEAD
+=======
+	infobox : false,
+>>>>>>> refs/remotes/origin/master
 	timeline : true,
 	automaticallyTrackDataSourceClocks : false,
 	skyBox : new Cesium.SkyBox({
@@ -56,7 +63,14 @@ var scaleWall = viewer.entities.add({
     wall : {
         positions : Cesium.Cartesian3.fromDegreesArrayHeights([-97.575,35.573, 3000.0,
                                                                -97.575,35.565, 3000.0]),
+<<<<<<< HEAD
         material : 'speedscale.png'
+=======
+        material : new Cesium.ImageMaterialProperty({
+			image : 'speedscale.png',
+			alpha: 0.99
+		})
+>>>>>>> refs/remotes/origin/master
     }
 });
 
@@ -66,7 +80,14 @@ var directionWall = viewer.entities.add({
         positions : Cesium.Cartesian3.fromDegreesArrayHeights([-97.575,35.563, 6000.0,
                                                                -97.575,35.513, 6000.0]),
 		minimumHeights : [3000,3000],
+<<<<<<< HEAD
         material : 'direction.png'
+=======
+        material : new Cesium.ImageMaterialProperty({
+			image : 'direction.png',
+			alpha: 0.99
+		})
+>>>>>>> refs/remotes/origin/master
     }
 });
 
@@ -75,7 +96,14 @@ var nwexpWall = viewer.entities.add({
     wall : {
         positions : Cesium.Cartesian3.fromDegreesArrayHeights([-97.585,35.5296076, 3000.0,
                                                                -97.585,35.5226076, 3000.0]),
+<<<<<<< HEAD
         material : 'nwexpwy.png'
+=======
+        material : new Cesium.ImageMaterialProperty({
+			image : 'nwexpwy.png',
+			alpha: 0.99
+		})
+>>>>>>> refs/remotes/origin/master
     }
 });
 
@@ -84,7 +112,14 @@ var FiftyWall = viewer.entities.add({
     wall : {
         positions : Cesium.Cartesian3.fromDegreesArrayHeights([-97.585,35.5189869, 3000.0,
                                                                -97.585,35.5119869, 3000.0]),
+<<<<<<< HEAD
         material : 'fifty.png'
+=======
+        material : new Cesium.ImageMaterialProperty({
+			image : 'fifty.png',
+			alpha: 0.99
+		})
+>>>>>>> refs/remotes/origin/master
     }
 });
 
@@ -93,7 +128,14 @@ var ThirtyWall = viewer.entities.add({
     wall : {
         positions : Cesium.Cartesian3.fromDegreesArrayHeights([-97.585,35.5026274, 3000.0,
                                                                -97.585,35.4956274, 3000.0]),
+<<<<<<< HEAD
         material : 'thirty.png'
+=======
+        material : new Cesium.ImageMaterialProperty({
+			image : 'thirty.png',
+			alpha: 0.99
+		})
+>>>>>>> refs/remotes/origin/master
     }
 });
 
@@ -102,7 +144,14 @@ var TwentyWall = viewer.entities.add({
     wall : {
         positions : Cesium.Cartesian3.fromDegreesArrayHeights([-97.585,35.4899432, 3000.0,
                                                                -97.585,35.4829432, 3000.0]),
+<<<<<<< HEAD
         material : 'twenty.png'
+=======
+        material : new Cesium.ImageMaterialProperty({
+			image : 'twenty.png',
+			alpha: 0.99
+		})
+>>>>>>> refs/remotes/origin/master
     }
 });
 
@@ -111,7 +160,14 @@ var TenthWall = viewer.entities.add({
     wall : {
         positions : Cesium.Cartesian3.fromDegreesArrayHeights([-97.585,35.4745886, 3000.0,
                                                                -97.585,35.4675886, 3000.0]),
+<<<<<<< HEAD
         material : 'tenth.png'
+=======
+        material : new Cesium.ImageMaterialProperty({
+			image : 'tenth.png',
+			alpha: 0.99
+		})
+>>>>>>> refs/remotes/origin/master
     }
 });
 
@@ -120,7 +176,14 @@ var IFortyWall = viewer.entities.add({
     wall : {
         positions : Cesium.Cartesian3.fromDegreesArrayHeights([-97.585,35.4634861, 3000.0,
                                                                -97.585,35.4564861, 3000.0]),
+<<<<<<< HEAD
         material : 'iforty.png'
+=======
+        material : new Cesium.ImageMaterialProperty({
+			image : 'iforty.png',
+			alpha: 0.99
+		})
+>>>>>>> refs/remotes/origin/master
     }
 });
 
