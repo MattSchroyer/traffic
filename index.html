@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-  <title>I-44 traffic dataviz</title>
+  <title>Morning commute</title>
   <script src="../Build/Cesium/Cesium.js"></script>
   <script src="../Build/Cesium/cesium-cartodb.js"></script>
   <style>
@@ -44,23 +44,89 @@ var basemapProvider = new Cesium.CartoDBImageryProvider({
 		currentTime : Cesium.JulianDate.fromIso8601("2015-01-01"),
 		stopTime : Cesium.JulianDate.fromIso8601("2015-09-01"),
 		clockRange : Cesium.ClockRange.LOOP_STOP,
-		multiplier : 2500000.0
+		multiplier : 2200000.0
 		}),
 	});
 
-viewer.dataSources.add(Cesium.CzmlDataSource.load('2015-01.czml'));
-viewer.dataSources.add(Cesium.CzmlDataSource.load('2015-02.czml'));
-viewer.dataSources.add(Cesium.CzmlDataSource.load('2015-03.czml'));
-viewer.dataSources.add(Cesium.CzmlDataSource.load('2015-04.czml'));
-viewer.dataSources.add(Cesium.CzmlDataSource.load('2015-05.czml'));
-viewer.dataSources.add(Cesium.CzmlDataSource.load('2015-06.czml'));
-viewer.dataSources.add(Cesium.CzmlDataSource.load('2015-07.czml'));
-viewer.dataSources.add(Cesium.CzmlDataSource.load('2015-08.czml'));
+viewer.dataSources.add(Cesium.CzmlDataSource.load('commonTrack6.czml'));
 
-var center = Cesium.Cartesian3.fromDegrees(-97.58, 35.46);
-var heading = Cesium.Math.toRadians(45.0);
-var pitch = Cesium.Math.toRadians(-30.0);
-var range = 18000.0;
+var scaleWall = viewer.entities.add({
+    name : 'scale',
+    wall : {
+        positions : Cesium.Cartesian3.fromDegreesArrayHeights([-97.575,35.573, 3000.0,
+                                                               -97.575,35.565, 3000.0]),
+        material : 'speedscale.png'
+    }
+});
+
+var directionWall = viewer.entities.add({
+    name : 'direction',
+    wall : {
+        positions : Cesium.Cartesian3.fromDegreesArrayHeights([-97.575,35.563, 6000.0,
+                                                               -97.575,35.513, 6000.0]),
+		minimumHeights : [3000,3000],
+        material : 'direction.png'
+    }
+});
+
+var nwexpWall = viewer.entities.add({
+    name : 'NW Expressway',
+    wall : {
+        positions : Cesium.Cartesian3.fromDegreesArrayHeights([-97.585,35.5296076, 3000.0,
+                                                               -97.585,35.5226076, 3000.0]),
+        material : 'nwexpwy.png'
+    }
+});
+
+var FiftyWall = viewer.entities.add({
+    name : '50th Street',
+    wall : {
+        positions : Cesium.Cartesian3.fromDegreesArrayHeights([-97.585,35.5189869, 3000.0,
+                                                               -97.585,35.5119869, 3000.0]),
+        material : 'fifty.png'
+    }
+});
+
+var ThirtyWall = viewer.entities.add({
+    name : 'NW 39th Street',
+    wall : {
+        positions : Cesium.Cartesian3.fromDegreesArrayHeights([-97.585,35.5026274, 3000.0,
+                                                               -97.585,35.4956274, 3000.0]),
+        material : 'thirty.png'
+    }
+});
+
+var TwentyWall = viewer.entities.add({
+    name : '23rd Street',
+    wall : {
+        positions : Cesium.Cartesian3.fromDegreesArrayHeights([-97.585,35.4899432, 3000.0,
+                                                               -97.585,35.4829432, 3000.0]),
+        material : 'twenty.png'
+    }
+});
+
+var TenthWall = viewer.entities.add({
+    name : '10th Street',
+    wall : {
+        positions : Cesium.Cartesian3.fromDegreesArrayHeights([-97.585,35.4745886, 3000.0,
+                                                               -97.585,35.4675886, 3000.0]),
+        material : 'tenth.png'
+    }
+});
+
+var IFortyWall = viewer.entities.add({
+    name : 'I40',
+    wall : {
+        positions : Cesium.Cartesian3.fromDegreesArrayHeights([-97.585,35.4634861, 3000.0,
+                                                               -97.585,35.4564861, 3000.0]),
+        material : 'iforty.png'
+    }
+});
+
+var center = Cesium.Cartesian3.fromDegrees(-97.58, 35.48);
+var heading = Cesium.Math.toRadians(90.0);
+var pitch = Cesium.Math.toRadians(-20.0);
+var range = 19000.0;
 viewer.camera.lookAt(center, new Cesium.HeadingPitchRange(heading, pitch, range));
 
 </script>
