@@ -21,6 +21,7 @@
   <div id="cesiumContainer"></div>
   <script>
 
+ // There is a warning about using this method for cartodb basemaps, but suggested alternative is buggy.
 var basemapProvider = new Cesium.CartoDBImageryProvider({
     url: 'http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
     credit: 'Basemap courtesy of CartoDB'
